@@ -17,4 +17,12 @@ public class PosManager {
 
         TableRepository.addOrder(tableNumber, menuNumber, count);
     }
+
+    public void showPaymentScene() {
+        OutputView.printTables(TableRepository.tables());
+
+        int tableNumber = InputView.inputTable();
+
+        OutputView.printReceipt(TableRepository.orders(tableNumber));
+    }
 }

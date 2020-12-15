@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,5 +39,9 @@ public class Table {
 
     public boolean isThisTable(int number) {
         return this.number == number;
+    }
+
+    public Map<Menu, Integer> getOrder() {
+        return Collections.unmodifiableMap(orders);
     }
 }

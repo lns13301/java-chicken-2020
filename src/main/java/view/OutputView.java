@@ -64,13 +64,13 @@ public class OutputView {
         System.out.println("## 테이블을 선택하세요.");
     }
 
-    public static void printReceipt(HashMap<Menu, Integer> orders) {
+    public static void printReceipt(Map<Menu, Integer> orders) {
         System.out.println("## 주문내역");
         System.out.println("메뉴 수량 금액");
         printReceiptMenus(orders);
     }
 
-    private static void printReceiptMenus(HashMap<Menu, Integer> orders) {
+    private static void printReceiptMenus(Map<Menu, Integer> orders) {
         Iterator<Map.Entry<Menu, Integer>> iterator = orders.entrySet().iterator();
 
         for (int i = 0; i <orders.size(); i++) {

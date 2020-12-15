@@ -1,9 +1,6 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class TableRepository {
     private static final List<Table> tables = new ArrayList<>();
@@ -30,5 +27,9 @@ public class TableRepository {
                 .filter(table -> table.isThisTable(tableNumber))
                 .findFirst()
                 .orElseThrow(NoSuchElementException::new);
+    }
+
+    public static Map<Menu, Integer> orders(int tableNumber) {
+        return findTableByTableNumber(tableNumber).getOrder();
     }
 }
