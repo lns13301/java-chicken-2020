@@ -8,4 +8,11 @@ public class PosManager {
         OutputView.printMainScene();
         InputView.inputChoiceFunction();
     }
+
+    public void showTables() {
+        OutputView.printTables(TableRepository.tables());
+        InputView.inputTableNumber();
+        InputView.inputRegisterMenu();
+        InputView.inputCount();
+    }
 }
