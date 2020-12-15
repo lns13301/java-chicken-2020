@@ -10,12 +10,12 @@ public class InputView {
         return scanner.nextInt();
     }
 
-    public static int printChoiceFunction() {
+    public static int inputChoiceFunction() {
         System.out.println("## 원하는 기능을 선택하세요.");
         return scanner.nextInt();
     }
 
-    public static int printRegisterMenu() {
+    public static int inputRegisterMenu() {
         System.out.println("## 등록할 메뉴를 선택하세요.");
         return scanner.nextInt();
     }
