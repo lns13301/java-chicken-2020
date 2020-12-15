@@ -52,4 +52,8 @@ public class OutputView {
     public static void printChoiceTable() {
         System.out.println("## 테이블을 선택하세요.");
     }
+
+    public static void printRegisterMenu() {
+        System.out.println("## 등록할 메뉴를 선택하세요.");
+    }
 }
