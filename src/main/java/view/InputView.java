@@ -25,4 +25,9 @@ public class InputView {
         System.out.println("## 메뉴의 수량을 입력하세요.");
         return scanner.nextInt();
     }
+    
+    public static int inputTable() {
+        System.out.println("## 테이블을 입력하세요.");
+        return scanner.nextInt();
+    }
 }
