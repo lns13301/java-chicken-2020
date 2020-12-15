@@ -4,6 +4,7 @@ import java.util.*;
 
 public class TableRepository {
     private static final int EMPTY_PRICE = 0;
+    private static final int EMPTY_COUNT = 0;
     private static final int CHICKEN_DISCOUNT_UNIT = 10;
     private static final int CHICKEN_DISCOUNT = 10000;
     private static final float CASH_DISCOUNT = 0.95f;
@@ -41,24 +42,23 @@ public class TableRepository {
     public static int totalPaymentPrice(int tableNumber, boolean isCash) {
         Iterator<Map.Entry<Menu, Integer>> iterator = orders(tableNumber).entrySet().iterator();
         int totalPrice = EMPTY_PRICE;
+        int totalChickenCount = EMPTY_COUNT;
 
         for (int i = 0; i < orders(tableNumber).size(); i++) {
             Map.Entry<Menu, Integer> entry = iterator.next();
             Menu key = entry.getKey();
             Integer value = entry.getValue();
-
-            totalPrice += (key.getPrice() * value) - discountChicken(key, value);
+            totalPrice += key.getPrice() * value;
+            totalChickenCount += addChickenTotalCount(key, value);
         }
+
+        totalPrice -= discountChicken(totalChickenCount);
 
         return discountCash(isCash, totalPrice);
     }
 
-    private static int discountChicken(Menu menu, int value) {
-        if (menu.isCategoryChicken()) {
-            return value / CHICKEN_DISCOUNT_UNIT * CHICKEN_DISCOUNT;
-        }
-
-        return EMPTY_PRICE;
+    private static int discountChicken(int value) {
+        return value / CHICKEN_DISCOUNT_UNIT * CHICKEN_DISCOUNT;
     }
 
     private static int discountCash(boolean isCash, int price) {
@@ -71,5 +71,13 @@ public class TableRepository {
 
     public static void resetTableOrders(int tableNumber) {
         findTableByTableNumber(tableNumber).initializeOrders();
+    }
+
+    public static int addChickenTotalCount(Menu menu, int count) {
+        if (menu.isCategoryChicken()) {
+            return count;
+        }
+
+        return EMPTY_COUNT;
     }
 }

@@ -45,7 +45,7 @@ public class PosManager {
 
             TableRepository.addOrder(tableNumber, menuNumber, count);
 
-            return state;
+            return State.MAIN_SCENE;
         }
 
         return state;
@@ -63,7 +63,7 @@ public class PosManager {
             OutputView.printTotalPayment(TableRepository.totalPaymentPrice(tableNumber, isCash));
             TableRepository.resetTableOrders(tableNumber);
 
-            return state;
+            return State.MAIN_SCENE;
         }
 
         return state;
