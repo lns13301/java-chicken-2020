@@ -24,5 +24,11 @@ public class PosManager {
         int tableNumber = InputView.inputTable();
 
         OutputView.printReceipt(TableRepository.orders(tableNumber));
+        boolean isCash = isCash(InputView.inputPayment(tableNumber));
+        OutputView.printTotalPayment(TableRepository.totalPaymentPrice(tableNumber, isCash));
+    }
+
+    private boolean isCash(int choice) {
+        return choice == 2;
     }
 }
