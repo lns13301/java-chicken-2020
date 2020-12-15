@@ -34,16 +34,17 @@ public class OutputView {
 
     private static void printOrderTable(List<Table> tables) {
         tables.forEach(table -> printBottomLine(table.hasOrdered()));
+        System.out.println();
     }
 
     private static void printBottomLine(boolean isOrdered) {
         if (isOrdered) {
-            System.out.println(BOTTOM_LINE);
+            System.out.print(ORDER_BOTTOM_LINE);
 
             return;
         }
 
-        System.out.println(ORDER_BOTTOM_LINE);
+        System.out.print(BOTTOM_LINE);
     }
 
     private static void printTableNumbers(final List<Table> tables) {
