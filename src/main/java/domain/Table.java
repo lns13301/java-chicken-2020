@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Table {
+    private static final int ORDER_LIMIT = 99;
+
     private final int number;
     private Map<Menu, Integer> orders;
 
@@ -19,5 +21,18 @@ public class Table {
 
     public boolean hasOrdered() {
         return !orders.isEmpty();
+    }
+
+    public boolean addOrder(Menu menu, int count) {
+        if (isOverOrderLimit(menu, count)) {
+            return false;
+        }
+
+        orders.put(menu, count);
+        return true;
+    }
+
+    private boolean isOverOrderLimit(Menu menu, int count) {
+        return orders.get(menu) + count > ORDER_LIMIT;
     }
 }
