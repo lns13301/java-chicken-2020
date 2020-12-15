@@ -26,6 +26,10 @@ public class Menu {
         return category == Category.CHICKEN;
     }
 
+    public boolean isThisMenu(int number) {
+        return this.number == number;
+    }
+
     public int getPrice() {
         return price;
     }

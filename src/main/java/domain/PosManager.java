@@ -11,8 +11,10 @@ public class PosManager {
 
     public void showTables() {
         OutputView.printTables(TableRepository.tables());
-        InputView.inputTableNumber();
-        InputView.inputRegisterMenu();
-        InputView.inputCount();
+        int tableNumber = InputView.inputTableNumber();
+        int menuNumber = InputView.inputRegisterMenu();
+        int count = InputView.inputCount();
+
+        TableRepository.addOrder(tableNumber, menuNumber, count);
     }
 }
