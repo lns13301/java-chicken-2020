@@ -13,4 +13,8 @@ public class Table {
     public String toString() {
         return Integer.toString(number);
     }
+
+    public boolean isOrdered() {
+        return isOrdered;
+    }
 }
