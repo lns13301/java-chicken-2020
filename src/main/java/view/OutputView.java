@@ -45,15 +45,7 @@ public class OutputView {
         System.out.println("3. 프로그램 종료");
     }
 
-    public static void printChoiceFunction() {
-        System.out.println("## 원하는 기능을 선택하세요.");
-    }
-
     public static void printChoiceTable() {
         System.out.println("## 테이블을 선택하세요.");
-    }
-
-    public static void printRegisterMenu() {
-        System.out.println("## 등록할 메뉴를 선택하세요.");
     }
 }
