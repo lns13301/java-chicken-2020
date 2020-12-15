@@ -34,6 +34,10 @@ public class Table {
     }
 
     private boolean isOverOrderLimit(Menu menu, int count) {
+        if (orders.get(menu) == null) {
+            return count > ORDER_LIMIT;
+        }
+
         return orders.get(menu) + count > ORDER_LIMIT;
     }
 
