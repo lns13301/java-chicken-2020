@@ -37,4 +37,15 @@ public class OutputView {
         }
         System.out.println();
     }
+
+    public static void printMainScene() {
+        System.out.println("## 메인화면");
+        System.out.println("1. 주문등록");
+        System.out.println("2. 결제하기");
+        System.out.println("3. 프로그램 종료");
+    }
+
+    public static void printChoiceFunction() {
+        System.out.println("## 원하는 기능을 선택하세요.");
+    }
 }
