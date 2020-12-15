@@ -81,4 +81,9 @@ public class OutputView {
             System.out.println(key.getName() + " " + value + " " + key.getPrice() * value);
         }
     }
+    
+    public static void printTotalPayment(int value) {
+        System.out.println("## 최종 결제할 금액");
+        System.out.println(value + "원");
+    }
 }
