@@ -29,7 +29,14 @@ public class Table {
             return false;
         }
 
-        orders.put(menu, count);
+        if (orders.get(menu) == null) {
+            orders.put(menu, count);
+
+            return true;
+        }
+
+        orders.put(menu, orders.get(menu) + count);
+
         return true;
     }
 
