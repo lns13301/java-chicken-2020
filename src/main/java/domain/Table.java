@@ -1,12 +1,15 @@
 package domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Table {
     private final int number;
-    private boolean isOrdered;
+    private Map<Menu, Integer> orders;
 
     public Table(final int number) {
         this.number = number;
-        isOrdered = false;
+        orders = new HashMap<>();
     }
 
     @Override
@@ -14,7 +17,7 @@ public class Table {
         return Integer.toString(number);
     }
 
-    public boolean isOrdered() {
-        return isOrdered;
+    public boolean hasOrdered() {
+        return !orders.isEmpty();
     }
 }

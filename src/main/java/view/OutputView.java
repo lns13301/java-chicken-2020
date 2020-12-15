@@ -33,7 +33,7 @@ public class OutputView {
     }
 
     private static void printOrderTable(List<Table> tables) {
-        tables.forEach(table -> printBottomLine(table.isOrdered()));
+        tables.forEach(table -> printBottomLine(table.hasOrdered()));
     }
 
     private static void printBottomLine(boolean isOrdered) {
