@@ -61,6 +61,7 @@ public class PosManager {
             OutputView.printReceipt(TableRepository.orders(tableNumber));
             boolean isCash = isCash(InputView.inputPayment(tableNumber));
             OutputView.printTotalPayment(TableRepository.totalPaymentPrice(tableNumber, isCash));
+            TableRepository.resetTableOrders(tableNumber);
 
             return state;
         }

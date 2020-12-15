@@ -68,4 +68,8 @@ public class TableRepository {
 
         return price;
     }
+
+    public static void resetTableOrders(int tableNumber) {
+        findTableByTableNumber(tableNumber).initializeOrders();
+    }
 }

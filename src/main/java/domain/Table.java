@@ -48,4 +48,8 @@ public class Table {
     public Map<Menu, Integer> getOrder() {
         return Collections.unmodifiableMap(orders);
     }
+
+    public void initializeOrders() {
+        orders = new HashMap<>();
+    }
 }
